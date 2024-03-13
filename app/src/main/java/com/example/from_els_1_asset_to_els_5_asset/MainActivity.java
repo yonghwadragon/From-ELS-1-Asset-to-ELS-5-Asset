@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         int tot_date, M;
         int[] check_dayInt = new int[len];
         long[] check_day = new long[len];
-        double Face_value, r, vol1, vol2, vol3, vol4, Knock_in_Barrier, dummy, ran1, ran2, ran3, ran4, corr12, corr13, corr14, corr23, corr24, corr34;
+        double Face_value, r, vol1, vol2, vol3, vol4, vol5, Knock_in_Barrier, dummy, ran1, ran2, ran3, ran4, ran5, corr12, corr13, corr14, corr15, corr23, corr24, corr25, corr34, corr35, corr45;
         double dt = 1.0 / 365.0;
         double sum = 0.0;
         double[] coupon_rate = new double[len];
@@ -344,6 +344,7 @@ public class MainActivity extends AppCompatActivity {
                 ran2 = random.nextGaussian();
                 ran3 = random.nextGaussian();
                 ran4 = random.nextGaussian();
+                ran5 = random.nextGaussian();
                 arr_ran1[i] = ran1;
                 arr_ran2[i] = corr12 * ran1 + Math.sqrt( 1 - Math.pow(corr12, 2) ) * ran2;
                 arr_ran3[i] = corr13 * ran1 + ( (corr23 - corr12 * corr13) / Math.sqrt( 1 - Math.pow(corr12, 2) ) ) * ran2 + Math.sqrt( 1 - ( Math.pow(corr13, 2) + Math.pow(corr23 - corr12 * corr13, 2) / (1 - Math.pow(corr12, 2)) ) ) * ran3;
